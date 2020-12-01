@@ -1,13 +1,13 @@
 function linearLegression(data) {
     var n = coordinates.length;
-    var sigX = coordinates.reduce(function (acc, c) { return acc + c.x; }, 0);
-    var sigY = coordinates.reduce(function (acc, c) { return acc + c.y; }, 0);
-    var sigXX = coordinates.reduce(function (acc, c) { return acc + c.x * c.x; }, 0);
-    var sigXY = coordinates.reduce(function (acc, c) { return acc + c.x * c.y; }, 0);
+    var X = coordinates.reduce(function (x, y) { return x + y.x; }, 0);
+    var Y = coordinates.reduce(function (x, y) { return x + y.y; }, 0);
+    var XX = coordinates.reduce(function (x, y) { return x + y.x * y.x; }, 0);
+    var XY = coordinates.reduce(function (x, y) { return x + y.x * y.y; }, 0);
     // a(傾き)を求める
-    var a = (n * sigXY - sigX * sigY) / (n * sigXX - Math.pow(sigX, 2));
+    var a = (n * XY - X * Y) / (n * XX - Math.pow(X, 2));
     // b(切片)を求める
-    var b = (sigXX * sigY - sigXY * sigX) / (n * sigXX - Math.pow(sigX, 2));
+    var b = (XX * Y - XY * X) / (n * XX - Math.pow(X, 2));
     console.log(a, b);
 }
 var coordinates = [

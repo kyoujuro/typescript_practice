@@ -1,14 +1,14 @@
 function linearLegression(data){
     
         const n = coordinates.length;
-        const sigX = coordinates.reduce((acc, c) => acc + c.x, 0);
-        const sigY = coordinates.reduce((acc, c) => acc + c.y, 0);
-        const sigXX = coordinates.reduce((acc, c) => acc + c.x * c.x, 0);
-        const sigXY = coordinates.reduce((acc, c) => acc + c.x * c.y, 0);
+        const X = coordinates.reduce((x, y) => x + y.x, 0);
+        const Y = coordinates.reduce((x, y) => x + y.y, 0);
+        const XX = coordinates.reduce((x, y) => x + y.x * y.x, 0);
+        const XY = coordinates.reduce((x, y) => x + y.x * y.y, 0);
         // a(傾き)を求める
-        const a = (n * sigXY - sigX * sigY) / (n * sigXX - Math.pow(sigX, 2));
+        const a = (n * XY - X * Y) / (n * XX - Math.pow(X, 2));
         // b(切片)を求める
-        const b = (sigXX * sigY - sigXY * sigX) / (n * sigXX - Math.pow(sigX, 2));
+        const b = (XX * Y - XY * X) / (n * XX - Math.pow(X, 2));
         console.log(a, b)
     
 }
