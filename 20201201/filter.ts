@@ -11,3 +11,13 @@ function filter(array, f){
 
 filter([1,2,3,4,5], _ => _ > 3)
 //console.log()
+
+var names = "Hello";
+var sub = "World";
+
+function message(names, sub, spaces){
+    var result = names + Array(spaces).join(' ') + sub;
+    console.log(result);
+}
+message(names, sub, 2);
+message(names, sub, 10);
