@@ -21,3 +21,16 @@ function message(names, sub, spaces){
 }
 message(names, sub, 2);
 message(names, sub, 10);
+
+enum Subject {
+    Math,
+    English,
+    Science
+}
+
+var test = Subject.Math;
+
+test = 90;
+
+console.log(Subject);
+console.log(test);
