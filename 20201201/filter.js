@@ -18,3 +18,14 @@ function message(names, sub, spaces) {
 }
 message(names, sub, 2);
 message(names, sub, 10);
+
+var Subject;
+(function (Subject) {
+    Subject[Subject["Math"] = 0] = "Math";
+    Subject[Subject["English"] = 1] = "English";
+    Subject[Subject["Science"] = 2] = "Science";
+})(Subject || (Subject = {}));
+var test = Subject.Math;
+test = 90;
+console.log(Subject);
+console.log(test);
